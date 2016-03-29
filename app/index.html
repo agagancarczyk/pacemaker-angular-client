@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en' data-ng-app='pacemakerClient'>
+  <head>
+    <title>pacemakerClient</title>
+    <meta name='viewport' content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'>
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+    <!-- inject:head:js -->
+    <!-- endinject -->
+    <!-- inject:html -->
+    <!-- endinject -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+    <!-- Menu -->
+	  <nav class="menu" id="theMenu">
+		  <div class="menu-wrap">
+			  <h1 class="logo"><a class="nav" href="index.html#home">PACEMAKER</a></h1>
+        <a ui-sref="login" class="smoothScroll">Login</a>
+			  <a ui-sref="signup" class="smoothScroll">signup</a>
+			  <a href="#"><i class="fa fa-facebook"></i></a>
+			  <a href="#"><i class="fa fa-twitter"></i></a>
+			  <a href="#"><i class="fa fa-dribbble"></i></a>
+			  <a href="#"><i class="fa fa-envelope"></i></a>
+		  </div>
+      <div id="menuToggle"><i class="fa fa-bars fa-3x"></i></div>
+    </nav>
+
+	  <div id="headerwrap">
+		  <div class="container">
+        <div class="dashboard-title">
+          Pacemaker
+        </div><hr>
+			  <div class="row">
+          <div class="centered-content">
+
+            <div data-ui-view></div>
+
+          </div>
+			  </div>
+		  </div>
+	  </div>
+
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- inject:js -->
+    <!-- endinject -->
+    
+  </body>
+</html>

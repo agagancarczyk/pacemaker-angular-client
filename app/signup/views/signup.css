@@ -1,0 +1,15 @@
+.btn-primary {
+    color: #fff;
+    background-color: #031421;
+    border-color: #1f4b71;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #005580;
+    border-color: #1f4b71;
+}
+
+input#inputFirstName, input#inputLastName, input#inputEmail  {
+  margin-bottom: 5px;
+}
