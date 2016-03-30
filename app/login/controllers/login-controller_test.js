@@ -9,8 +9,4 @@ describe('LoginCtrl', function () {
   beforeEach(inject(function ($rootScope, $controller) {
     ctrl = $controller('LoginCtrl');
   }));
-
-  it('should have ctrlName as LoginCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('LoginCtrl');
-  });
 });

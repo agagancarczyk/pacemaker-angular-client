@@ -2,7 +2,7 @@
   "name": "pacemakerClient",
   "version": "0.0.0",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp unitTest"
   },
   "dependencies": {},
   "devDependencies": {

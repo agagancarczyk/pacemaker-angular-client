@@ -14,7 +14,6 @@
 
   function LoginCtrl($rootScope, Users, $state, $stateParams) {
     var vm = this;
-    vm.ctrlName = 'LoginCtrl';
     vm.parameters = {
       email: $stateParams.email,
       password: $stateParams.password

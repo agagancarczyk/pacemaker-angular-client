@@ -11,10 +11,6 @@ describe('Users', function () {
   }));
 
   it('should have someValue be Users', function () {
-    expect(factory.someValue).toEqual('Users');
-  });
-
-  it('should have someMethod return Users', function () {
-    expect(factory.someMethod()).toEqual('Users');
+    expect(factory.factoryName).toEqual('Users');
   });
 });
