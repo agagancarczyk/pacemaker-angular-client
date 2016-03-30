@@ -12,7 +12,7 @@
     .module('pacemakerClient')
     .factory('Users', Users);
 
-    function Users($cookies, $http, baseurl, baseendpoint) {
+    function Users($cookies, $http, baseurl, baseendpoint, $log) {
     var UsersBase = {},
         isLogged = false;
 
@@ -37,14 +37,16 @@
     };
 
     UsersBase.login = function (token, email, callback) {
-      var data = $.param({
-        token: token,
-        email: email
-      });
-      return $http.post(baseurl + baseendpoint + token + '/users/generateToken/' + email , data, {
 
+      var token = '';
+      var email = '';
+
+      return $http({
+        method: 'POST',
+        url: baseurl + baseendpoint + token + '/users/generateToken/' + email,
       })
       .then(function successCallback(response) {
+        console.log(response)
         callback(response);
       }, function errorCallback(response) {
         console.log('FAILURE for POST to [' + baseurl + baseendpoint + token + '/users/generateToken/' + email + ']: ', response);
@@ -53,8 +55,9 @@
     };
 
     UsersBase.signup = function (callback) {
-      return $http.post(baseurl + baseendpoint + '/users', {
-
+      return $http({
+        method: 'POST',
+        url: baseurl + baseendpoint + '/users',
       })
       .then(function successCallback(response) {
         callback(response);

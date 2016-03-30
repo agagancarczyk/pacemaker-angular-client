@@ -10,7 +10,7 @@ describe('baseurl', function () {
     constant = baseurl;
   }));
 
-  it('should equal http://agpacemakerplay.herokuapp.com', function () {
-    expect(constant).toBe('http://agpacemakerplay.herokuapp.com');
+  it('should equal http://localhost:9000', function () {
+    expect(constant).toBe('http://localhost:9000');
   });
 });
