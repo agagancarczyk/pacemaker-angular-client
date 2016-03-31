@@ -19,9 +19,6 @@ tmp
 # Log files
 *.log
 
-#bower_components
-bower_components
-
 ### Node ###
 # Logs
 logs
