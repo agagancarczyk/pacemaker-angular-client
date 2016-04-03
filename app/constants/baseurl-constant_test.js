@@ -10,7 +10,7 @@ describe('baseurl', function () {
     constant = baseurl;
   }));
 
-  it('should equal http://localhost:9000', function () {
-    expect(constant).toBe('http://localhost:9000');
+  it('should equal https://runkeeper.com', function () {
+    expect(constant).toBe('https://runkeeper.com');
   });
 });

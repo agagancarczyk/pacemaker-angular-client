@@ -1,2 +1,16 @@
 <h2>dashboard</h2>
 <p>{{dashboard.ctrlName}}</p>
+
+<!-- Menu -->
+<nav class="menu" id="theMenu">
+  <div class="menu-wrap">
+    <h1 class="logo"><a class="nav" href="index.html#home">PACEMAKER</a></h1>
+    <button ng-click="login.getSplashPage()">Login</button>
+    <a ui-sref="signup" class="smoothScroll">signup</a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div id="menuToggle"><i class="fa fa-bars fa-3x"></i></div>
+</nav>

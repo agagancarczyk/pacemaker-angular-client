@@ -13,20 +13,11 @@
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
-      .state('home.signup', {
-        url: '/signup',
+      .state('home.getAuthorizationPage', {
+        url: '/?code',
         templateUrl: 'signup/views/signup.tpl.html',
         controller: 'SignupCtrl',
         controllerAs: 'signup'
-      })
-      .state('home.login', {
-        url: '/login',
-        templateUrl: 'login/views/login.tpl.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'vm',
-        data: {
-          title: 'Login'
-        }
       });
   }
 }());

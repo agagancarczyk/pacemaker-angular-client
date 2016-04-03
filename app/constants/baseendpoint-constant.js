@@ -10,5 +10,5 @@
    */
   angular
     .module('pacemakerClient')
-    .constant('baseendpoint', '/api/');
+    .constant('baseendpoint', '/apps/');
 }());

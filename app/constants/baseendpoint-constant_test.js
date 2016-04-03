@@ -10,7 +10,7 @@ describe('baseendpoint', function () {
     constant = baseendpoint;
   }));
 
-  it('should equal /api/', function () {
-    expect(constant).toBe('/api/');
+  it('should equal /apps/', function () {
+    expect(constant).toBe('/apps/');
   });
 });
