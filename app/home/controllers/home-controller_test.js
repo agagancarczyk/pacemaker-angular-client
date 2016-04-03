@@ -10,7 +10,7 @@ describe('HomeCtrl', function () {
     ctrl = $controller('HomeCtrl');
   }));
 
-  it('should have ctrlName as HomeCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('HomeCtrl');
-  });
+  // it('should have ctrlName as HomeCtrl', function () {
+  //   expect(ctrl.ctrlName).toEqual('HomeCtrl');
+  // });
 });
