@@ -12,8 +12,6 @@
       'ui.router',
       'ui.bootstrap',
       'home',
-      'login',
-      'signup',
       'ngCookies',
       'dashboard'
     ]);

@@ -1,32 +1,58 @@
 (function () {
   'use strict';
 
-  /**
-   * @ngdoc service
-   * @name pacemakerClient.factory:Users
-   *
-   * @description
-   *
-   */
   angular
     .module('pacemakerClient')
     .factory('Users', Users);
 
-  function Users($cookies, $http, baseurl, baseendpoint) {
+  function Users($cookies, $http, baseurl, baseendpoint, $window) {
+    /**
+    * @ngdoc service
+    * @name pacemakerClient.Users
+    *
+    * @description Services for pacemakerClient application
+    */
     var UsersBase = {},
-        isLogged = false;
+        isLogged = false,
+        client_id =  "8de5d2e1e76a407b94d56a588fa41a57",
+        response_type = "",
+        redirect_uri = "http://192.168.1.221:3000/#/home";
 
     UsersBase.factoryName = 'Users';
 
     UsersBase.getIslogged = function () {
+      /**
+      * @ngdoc method
+      * @name getIslogged
+      * @methodOf pacemakerClient.Users
+      * @description
+      * Returns logged in user
+      */
+
       return isLogged;
     };
 
     UsersBase.setIslogged = function (state) {
+      /**
+      * @ngdoc method
+      * @name setIslogged
+      * @methodOf pacemakerClient.Users
+      * @description
+      * Sets logged in user
+      */
+
       isLogged = state;
     };
 
     UsersBase.getAuthData = function () {
+      /**
+      * @ngdoc method
+      * @name getAuthData
+      * @methodOf pacemakerClient.Users
+      * @description
+      * Returns cookies
+      */
+
       var data;
 
       if ($cookies.get('pacemakerData')) {
@@ -36,22 +62,18 @@
       return data;
     };
 
-    var client_id =  "8de5d2e1e76a407b94d56a588fa41a57";
-    var response_type = "code";
-    var redirect_uri = "http://192.168.1.221:3000/#/home";
-
     UsersBase.getAuthorizationPage = function (response, callback) {
-     return $http({
-       method: 'GET',
-       url: 'https://runkeeper.com/apps/authorize?client_id='+ client_id +'&response_type=' + response_type + '&redirect_uri=' + redirect_uri + '&state=runkeeper-redirect'
-     })
-     .then(function successCallback(response) {
-       console.log('success');
-       callback(response);
-     }, function errorCallback(response) {
-       console.log('FAILURE for GET to [' + url+ ']: ', response);
-       callback(response);
-     });
+      /**
+      * @ngdoc method
+      * @name getAuthorizationPage
+      * @methodOf pacemakerClient.Users
+      * @description
+      * Returns the authorization code.
+      */
+      console.log(response);
+      $window.location.href = baseurl + baseendpoint + 'authorize?client_id='+ client_id +
+      '&response_type=' + 'code' +
+      '&redirect_uri=' + redirect_uri;
    };
 
     return UsersBase;

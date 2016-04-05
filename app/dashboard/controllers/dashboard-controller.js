@@ -5,7 +5,7 @@
    * @ngdoc object
    * @name dashboard.controller:DashboardCtrl
    *
-   * @description
+   * @description Dashboard controller
    *
    */
   angular
