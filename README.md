@@ -1,9 +1,5 @@
 # pacemakerClient [![Build Status](https://travis-ci.org/agagancarczyk/pacemaker-angular-client.svg?branch=master)](https://travis-ci.org/agagancarczyk/pacemaker-angular-client)
 
-
-
-*Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.11.5) version 0.11.5*
-
 College project for Design Patterns and Enterprise Architecture module.
 
 Tools/Technologies/Frameworks:
@@ -16,6 +12,8 @@ Tools/Technologies/Frameworks:
 * CI: Travis
 * Package Management: Bower (front-end) & npm (back-end)
 * Javascript code quality tool: JSHint
+
+*Skeleton Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.11.5) version 0.11.5*
 
 ## Setup
 1. Install [Node.js](http://nodejs.org/)
