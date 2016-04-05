@@ -1,6 +1,6 @@
 # pacemakerClient [![Build Status](https://travis-ci.org/agagancarczyk/pacemaker-angular-client.svg?branch=master)](https://travis-ci.org/agagancarczyk/pacemaker-angular-client)
 
-College project for Design Patterns and Enterprise Architecture module.
+College project for Design Patterns and Enterprise Architecture module. API used in the project is the Health Graph API: https://runkeeper.com/developer/healthgraph/overview .
 
 Tools/Technologies/Frameworks:
 * Web Application Framework: Angular.js
