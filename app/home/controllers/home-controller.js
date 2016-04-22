@@ -13,35 +13,28 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($rootScope, Users, $state, $stateParams, $cookieStore,
-    $location, $http, $window) {
+  function HomeCtrl($rootScope, Users, $state, $stateParams,
+    $location, $http, $window, $cookies) {
 
     var vm = this;
     vm.ctrlName = 'HomeCtrl';
     vm.parameters = {
       redirect_uri: $stateParams.redirect_uri
     };
-    vm.responseDetails = '';
-    vm.error = '';
 
     if ($window.location.search.indexOf('?code=')> -1){
       vm.code = $window.location.search.replace('?code=','');
       $http({
         method: 'POST',
-        url: 'https://runkeeper.com/apps/token',
+        url: 'https://runkeeper.com/apps/token?grant_type=authorization_code&code='+vm.code+'&client_id=8de5d2e1e76a407b94d56a588fa41a57&client_secret=827641434aa3435e9ec2dd4fb2dd53bb&redirect_uri=http://192.168.1.221:3000/#/home',
         headers: {
            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          'grant_type': 'authorization_code',
-          'code': vm.code,
-          'redirect_uri' : 'http://192.168.1.221:3000/#/home',
-          'client_id': '8de5d2e1e76a407b94d56a588fa41a57',
-          'client_secret': '827641434aa3435e9ec2dd4fb2dd53bb'
         }
       })
       .then(function successCallback(response) {
-        console.log('success',response);
+        vm.access_token = JSON.stringify(response.data.access_token);
+        console.log('success', vm.access_token);
+        $cookies.put('pacemaker', vm.access_token);
       }, function errorCallback(response) {
         console.log('FAILURE for GET to  ', response);
       });

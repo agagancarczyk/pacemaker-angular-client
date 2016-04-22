@@ -44,24 +44,6 @@
       isLogged = state;
     };
 
-    UsersBase.getAuthData = function () {
-      /**
-      * @ngdoc method
-      * @name getAuthData
-      * @methodOf pacemakerClient.Users
-      * @description
-      * Returns cookies
-      */
-
-      var data;
-
-      if ($cookies.get('pacemakerData')) {
-        data = $cookies.getObject('pacemakerData');
-      }
-
-      return data;
-    };
-
     UsersBase.getAuthorizationPage = function (response, callback) {
       /**
       * @ngdoc method
