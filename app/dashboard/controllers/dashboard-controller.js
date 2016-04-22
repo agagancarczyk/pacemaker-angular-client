@@ -12,8 +12,12 @@
     .module('dashboard')
     .controller('DashboardCtrl', DashboardCtrl);
 
-  function DashboardCtrl() {
+  function DashboardCtrl(Users, $stateParams) {
     var vm = this;
     vm.ctrlName = 'DashboardCtrl';
+    vm.parameters = {
+      resources: $stateParams.resources
+    };
+    
   }
 }());

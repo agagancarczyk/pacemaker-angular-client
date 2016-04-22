@@ -20,30 +20,6 @@
 
     UsersBase.factoryName = 'Users';
 
-    UsersBase.getIslogged = function () {
-      /**
-      * @ngdoc method
-      * @name getIslogged
-      * @methodOf pacemakerClient.Users
-      * @description
-      * Returns logged in user
-      */
-
-      return isLogged;
-    };
-
-    UsersBase.setIslogged = function (state) {
-      /**
-      * @ngdoc method
-      * @name setIslogged
-      * @methodOf pacemakerClient.Users
-      * @description
-      * Sets logged in user
-      */
-
-      isLogged = state;
-    };
-
     UsersBase.getAuthorizationPage = function (response, callback) {
       /**
       * @ngdoc method
@@ -57,6 +33,28 @@
       '&response_type=' + 'code' +
       '&redirect_uri=' + redirect_uri;
    };
+
+   UsersBase.getUserResources = function (response, callback) {
+     /**
+     * @ngdoc method
+     * @name getUserResources
+     * @methodOf pacemakerClient.Users
+     * @description
+     * Returns user's resources.
+     */
+     $http({
+       method: 'GET',
+       url: 'https://api.runkeeper.com/user/',
+       headers: {
+          'Authorization': 'Bearer ' + $cookies.get('access_token'),
+          'Accept': 'application/vnd.com.runkeeper.User+json'
+       }
+     }).then(function successCallback(response) {
+          console.log('success user resources: ' + JSON.stringify(response));
+     }, function errorCallback(response) {
+          console.log('failure!');
+     });
+  };
 
     return UsersBase;
   }
