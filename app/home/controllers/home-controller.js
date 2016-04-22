@@ -34,7 +34,8 @@
       .then(function successCallback(response) {
         vm.access_token = JSON.stringify(response.data.access_token);
         console.log('success', vm.access_token);
-        $cookies.put('pacemaker', vm.access_token);
+        $cookies.put('access_token', vm.access_token);
+        $window.location.href = '/#/dashboard';
       }, function errorCallback(response) {
         console.log('FAILURE for GET to  ', response);
       });
