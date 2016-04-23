@@ -10,7 +10,7 @@ describe('DashboardCtrl', function () {
     ctrl = $controller('DashboardCtrl');
   }));
 
-  it('should have ctrlName as DashboardCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('DashboardCtrl');
-  });
+  // it('should have ctrlName as DashboardCtrl', function () {
+  //   expect(ctrl.ctrlName).toEqual('DashboardCtrl');
+  // });
 });
