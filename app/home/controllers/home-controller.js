@@ -13,7 +13,7 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($rootScope, Users, $state, $stateParams,
+  function HomeCtrl($rootScope, Auth, $state, $stateParams,
     $location, $http, $window, $cookies) {
 
     var vm = this;
@@ -46,7 +46,7 @@
      */
     vm.getAuthorizationPage = function () {
       console.log();
-      Users.getAuthorizationPage(vm.parameters.redirect_uri, function (response) {
+      Auth.getAuthorizationPage(vm.parameters.redirect_uri, function (response) {
         console.log(response);
         if (angular.isObject(response)) {
           vm.responseDetails = response.config.url;
