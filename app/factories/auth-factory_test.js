@@ -10,11 +10,7 @@ describe('Auth', function () {
     factory = Auth;
   }));
 
-  it('should have someValue be Auth', function () {
+  it('should have factoryName be Auth', function () {
     expect(factory.factoryName).toEqual('Auth');
-  });
-
-  it('should have someMethod return Auth', function () {
-    expect(factory.someMethod()).toEqual('Auth');
   });
 });

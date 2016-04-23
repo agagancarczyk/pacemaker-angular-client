@@ -5,8 +5,6 @@
 <nav class="menu" id="theMenu">
   <div class="menu-wrap">
     <h1 class="logo"><a class="nav" href="index.html#home">PACEMAKER</a></h1>
-    <button ng-click="login.getSplashPage()">Login</button>
-    <a ui-sref="signup" class="smoothScroll">signup</a>
     <a href="#"><i class="fa fa-facebook"></i></a>
     <a href="#"><i class="fa fa-twitter"></i></a>
     <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -14,3 +12,13 @@
   </div>
   <div id="menuToggle"><i class="fa fa-bars fa-3x"></i></div>
 </nav>
+
+<script>
+(function () {
+  $('#menuToggle, .menu-close').on('click', function () {
+    $('#menuToggle').toggleClass('active');
+		$('body').toggleClass('body-push-toleft');
+		$('#theMenu').toggleClass('menu-open');
+	});
+})(jQuery)
+</script>
