@@ -32,7 +32,7 @@
           'Accept': 'application/vnd.com.runkeeper.User+json'
        }
      }).then(function successCallback(response) {
-          console.log('success user resources: ' + JSON.stringify(response));
+          //console.log('success user resources: ' + JSON.stringify(response));
      }, function errorCallback(response) {
           console.log('failure!');
      });

@@ -1,10 +1,11 @@
 <h2>dashboard</h2>
-<p>{{dashboard.ctrlName}}</p>
+<p>{{dashboard.profileInfo.userName}}</p>
 
 <!-- Menu -->
 <nav class="menu" id="theMenu">
   <div class="menu-wrap">
     <h1 class="logo"><a class="nav" href="index.html#home">PACEMAKER</a></h1>
+    <h3><a class="nav-logout" href="" ng-click="dashboard.logout()">Logout</a></h3>
     <a href="#"><i class="fa fa-facebook"></i></a>
     <a href="#"><i class="fa fa-twitter"></i></a>
     <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -12,6 +13,12 @@
   </div>
   <div id="menuToggle"><i class="fa fa-bars fa-3x"></i></div>
 </nav>
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <div class="well"></div>
+</div>
+<div class="col-md-4"></div>
 
 <script>
 (function () {
