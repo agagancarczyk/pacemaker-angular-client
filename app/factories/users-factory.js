@@ -16,7 +16,6 @@
 
     UsersBase.factoryName = 'Users';
 
-    UsersBase.getUserResources = function (response, callback) {
      /**
      * @ngdoc method
      * @name getUserResources
@@ -24,19 +23,15 @@
      * @description
      * Returns user's resources.
      */
-     $http({
-       method: 'GET',
-       url: 'https://api.runkeeper.com/user/',
-       headers: {
-          'Authorization': 'Bearer ' + $cookies.get('access_token'),
-          'Accept': 'application/vnd.com.runkeeper.User+json'
-       }
-     }).then(function successCallback(response) {
-          //console.log('success user resources: ' + JSON.stringify(response));
-     }, function errorCallback(response) {
-          console.log('failure!');
-     });
-  };
+
+     UsersBase.getUserResources = function (response, callback) {
+      return $http.get('https://api.runkeeper.com/user/', {
+        headers: {
+           'Authorization': 'Bearer ' + $cookies.get('access_token'),
+           'Accept': 'application/vnd.com.runkeeper.User+json'
+        }
+      });
+    };
 
     return UsersBase;
   }

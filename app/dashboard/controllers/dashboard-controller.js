@@ -16,20 +16,13 @@
     var vm = this;
     vm.ctrlName = 'DashboardCtrl';
     vm.userData = '';
-    vm.parameters = {
-      resources: $stateParams.resources
-    };
-
-    vm.profileInfo = {
-      userName: 'Homer Simpson'
-    };
 
     /*
      * Get User's Resources
      */
-    Users.getUserResources(vm.parameters.resources, function (data) {
+    Users.getUserResources().success(function (data) {
       vm.userData = data;
-      console.log('userData: ' + data);
+      console.log(vm.userData);
     });
 
     vm.logout = function () {

@@ -1,11 +1,18 @@
 <h2>dashboard</h2>
-<p>{{dashboard.profileInfo.userName}}</p>
+<p>{{dashboard.userData.userID}}</p>
+<p>{{dashboard.userData.settings}}</p>
 
 <!-- Menu -->
 <nav class="menu" id="theMenu">
   <div class="menu-wrap">
     <h1 class="logo"><a class="nav" href="index.html#home">PACEMAKER</a></h1>
-    <h3><a class="nav-logout" href="" ng-click="dashboard.logout()">Logout</a></h3>
+    <h3>
+      <li><a class="nav-item" href="" ng-click="dashboard.logout()">Logout</a></li>
+      <li><a class="nav-item" href="" ng-click="">Reports</a></li>
+      <li><a class="nav-item" href="" ng-click="">Training</a></li>
+      <li><a class="nav-item" href="" ng-click="">Activities</a></li>
+      <li><a class="nav-item" href="" ng-click="">Friends</a></li>
+    </h3>
     <a href="#"><i class="fa fa-facebook"></i></a>
     <a href="#"><i class="fa fa-twitter"></i></a>
     <a href="#"><i class="fa fa-dribbble"></i></a>
