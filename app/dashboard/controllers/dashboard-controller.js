@@ -16,6 +16,7 @@
     var vm = this;
     vm.ctrlName = 'DashboardCtrl';
     vm.userData = '';
+    vm.userProfile = '';
 
     /*
      * Get User's Resources
@@ -23,6 +24,14 @@
     Users.getUserResources().success(function (data) {
       vm.userData = data;
       console.log(vm.userData);
+    });
+
+    /*
+     * Get User's Profile
+     */
+    Users.getUserProfile().success(function (data) {
+      vm.userProfile = data;
+      console.log(vm.userProfile);
     });
 
     vm.logout = function () {

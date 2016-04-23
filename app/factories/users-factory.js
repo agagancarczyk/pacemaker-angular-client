@@ -23,7 +23,6 @@
      * @description
      * Returns user's resources.
      */
-
      UsersBase.getUserResources = function (response, callback) {
       return $http.get('https://api.runkeeper.com/user/', {
         headers: {
@@ -32,6 +31,22 @@
         }
       });
     };
+
+    /**
+    * @ngdoc method
+    * @name getUserProfile
+    * @methodOf pacemakerClient.Users
+    * @description
+    * Returns user's profile.
+    */
+    UsersBase.getUserProfile = function (response, callback) {
+     return $http.get('https://api.runkeeper.com/profile/', {
+       headers: {
+          'Authorization': 'Bearer ' + $cookies.get('access_token'),
+          'Accept': 'application/vnd.com.runkeeper.Profile+json'
+       }
+     });
+   };
 
     return UsersBase;
   }
