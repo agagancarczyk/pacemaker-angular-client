@@ -4,7 +4,7 @@
 describe('DashboardCtrl', function () {
   var ctrl;
 
-  beforeEach(module('dashboard'));
+  beforeEach(module('dashboard', 'pacemakerClient'));
 
   beforeEach(inject(function ($rootScope, $controller) {
     ctrl = $controller('DashboardCtrl');
