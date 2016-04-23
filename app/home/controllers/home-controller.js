@@ -20,7 +20,6 @@
     vm.ctrlName = 'HomeCtrl';
     vm.parameters = {
       redirect_uri: $stateParams.redirect_uri,
-      resources: $stateParams.resources
     };
 
     if ($window.location.search.indexOf('?code=')> -1){
@@ -35,15 +34,7 @@
       .then(function successCallback(response) {
         vm.access_token = response.data.access_token;
         $cookies.put('access_token', vm.access_token);
-
-        /*
-         * Get User's Resources
-         */
-        Users.getUserResources(vm.parameters.resources, function (response) {
-          console.log(response);
-          //$window.location.href = '/#/dashboard';
-        });
-
+        $window.location.href = '/#/dashboard';
       }, function errorCallback(response) {
         console.log('FAILURE for GET to  ', response);
       });
