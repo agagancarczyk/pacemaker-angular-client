@@ -17,7 +17,7 @@
     vm.ctrlName = 'DashboardCtrl';
     vm.userData = '';
     vm.userProfile = '';
-    vm.recentActivities = '';
+    vm.activities = '';
 
     /*
      * Get User's Resources
@@ -39,8 +39,8 @@
      * Get User's Recent Activities
      */
     FitnessActivities.getFeeds().success(function (data) {
-      vm.recentActivities = data;
-      console.log(vm.recentActivities);
+      vm.activities = data.items;
+      console.log(vm.activities);
     });
 
     vm.dashboard = function () {

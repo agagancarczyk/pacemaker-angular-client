@@ -47,7 +47,22 @@
   </div>
   <div class="col-md-6">
     <div class="well">
-      <h4><strong>RECENT ACTIVITIES</strong></h4></div><br>
+      <h4><strong>RECENT ACTIVITIES: {{dashboard.activities.length}}</strong></h4><br>
+      <table class="table table-responsive">
+        <tbody>
+          <tr ng-repeat="activity in dashboard.activities">
+            <td>
+              <p>Type: {{activity.type}}</p>
+            </td>
+            <td>
+              <p>Duration: {{activity.duration}}</p>
+            </td>
+            <td>
+              <p>Total Distance: {{activity.total_distance}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

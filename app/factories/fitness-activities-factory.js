@@ -5,7 +5,7 @@
     .module('pacemakerClient')
     .factory('FitnessActivities', FitnessActivities);
 
-  function FitnessActivities() {
+  function FitnessActivities($cookies, $http, apiBaseurl) {
     /**
     * @ngdoc service
     * @name pacemakerClient.FitnessActivities
@@ -23,7 +23,7 @@
     * Returns user's recent activities.
     */
     FitnessActivitiesBase.getFeeds = function (response, callback) {
-      return $http.get(apiBaseurl + '/fitnessActivities?pageSize=1', {
+      return $http.get(apiBaseurl + '/fitnessActivities?pageSize=4', {
         headers: {
            'Authorization': 'Bearer ' + $cookies.get('access_token'),
            'Accept': 'application/vnd.com.runkeeper.FitnessActivityFeed+json'
