@@ -34,6 +34,10 @@
       console.log(vm.userProfile);
     });
 
+    vm.dashboard = function () {
+      $state.go('dashboard');
+    };
+
     vm.logout = function () {
       $cookies.remove('access_token');
       $state.go('home');
