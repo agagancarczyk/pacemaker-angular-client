@@ -22,7 +22,7 @@
     * @description
     * Returns user's recent activities.
     */
-    FitnessActivitiesBase.fetFeeds = function (response, callback) {
+    FitnessActivitiesBase.getFeeds = function (response, callback) {
       return $http.get(apiBaseurl + '/fitnessActivities?pageSize=1', {
         headers: {
            'Authorization': 'Bearer ' + $cookies.get('access_token'),
