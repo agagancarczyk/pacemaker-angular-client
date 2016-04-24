@@ -5,7 +5,7 @@
     .module('pacemakerClient')
     .factory('Users', Users);
 
-  function Users($cookies, $http, baseurl, baseendpoint, $window) {
+  function Users($cookies, $http, apiBaseurl, $window) {
     /**
     * @ngdoc service
     * @name pacemakerClient.Users
@@ -24,7 +24,7 @@
      * Returns user's resources.
      */
      UsersBase.getUserResources = function (response, callback) {
-      return $http.get('https://api.runkeeper.com/user/', {
+      return $http.get(apiBaseurl + '/user/', {
         headers: {
            'Authorization': 'Bearer ' + $cookies.get('access_token'),
            'Accept': 'application/vnd.com.runkeeper.User+json'
@@ -40,7 +40,7 @@
     * Returns user's profile.
     */
     UsersBase.getUserProfile = function (response, callback) {
-     return $http.get('https://api.runkeeper.com/profile/', {
+     return $http.get(apiBaseurl + '/profile/', {
        headers: {
           'Authorization': 'Bearer ' + $cookies.get('access_token'),
           'Accept': 'application/vnd.com.runkeeper.Profile+json'
