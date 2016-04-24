@@ -10,10 +10,9 @@
     * @ngdoc service
     * @name pacemakerClient.Users
     *
-    * @description Services for pacemakerClient application
+    * @description Users services for pacemakerClient application
     */
     var UsersBase = {};
-
     UsersBase.factoryName = 'Users';
 
      /**
@@ -47,7 +46,6 @@
        }
      });
    };
-
     return UsersBase;
   }
 }());

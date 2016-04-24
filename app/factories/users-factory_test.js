@@ -10,7 +10,7 @@ describe('Users', function () {
     factory = Users;
   }));
 
-  it('should have someValue be Users', function () {
+  it('should have factoryName be Users', function () {
     expect(factory.factoryName).toEqual('Users');
   });
 });

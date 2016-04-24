@@ -10,7 +10,7 @@
     * @ngdoc service
     * @name pacemakerClient.Auth
     *
-    * @description Services for pacemakerClient application
+    * @description Auth services for pacemakerClient application
     */
     var AuthBase = {},
         client_id =  "8de5d2e1e76a407b94d56a588fa41a57",
