@@ -12,13 +12,13 @@
     .module('dashboard')
     .controller('DashboardCtrl', DashboardCtrl);
 
-  function DashboardCtrl(Users, $stateParams, $cookies, $state) {
+  function DashboardCtrl(Users, FitnessActivities, $stateParams, $cookies, $state) {
     var vm = this;
     vm.ctrlName = 'DashboardCtrl';
     vm.userData = '';
     vm.userProfile = '';
     vm.recentActivities = '';
-    
+
     /*
      * Get User's Resources
      */
