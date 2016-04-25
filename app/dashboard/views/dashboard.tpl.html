@@ -39,9 +39,9 @@
     </div>
     <div class="well">
       <h4 class="left-panel"><strong> STATS</strong></h4><hr>
-      <p><strong>Total Activities: </strong></p>
-      <p><strong>Total Distance: </strong> </p>
-      <p><strong>Total Calories: </strong> </p>
+      <p><strong>Total Activities: {{dashboard.activitiesSum}}</strong></p>
+      <p><strong>Total Distance: {{dashboard.distanceToFixed}}</strong> </p>
+      <p><strong>Total Calories: {{dashboard.caloriesSum}}</strong> </p>
       <p><strong>Weight: </strong>{{dashboard.userProfile.weight}}</p>
     </div>
   </div>
@@ -50,19 +50,19 @@
       <h4><strong>RECENT ACTIVITIES: {{dashboard.activities.length}}</strong></h4><br>
       <table class="table table-responsive">
         <tbody>
+          <tr>
+            <td><strong>Type</strong></td>
+            <td><strong>Duration</strong></td>
+            <td><strong>Calories</strong></td>
+            <td><strong>Total Distance</strong></td>
+            <td><strong>Date</strong></td>
+          </tr>
           <tr ng-repeat="activity in dashboard.activities">
-            <td>
-              <p>Type: {{activity.type}}</p>
-            </td>
-            <td>
-              <p>Duration: {{activity.duration}}</p>
-            </td>
-            <td>
-              <p>Total Distance: {{activity.total_distance}}</p>
-            </td>
-            <td>
-              <p>Date: {{activity.start_time}}</p>
-            </td>
+            <td>{{activity.type}}</td>
+            <td>{{activity.duration}}</td>
+            <td>{{activity.total_calories}}</td>
+            <td>{{activity.total_distance}}</td>
+            <td>{{activity.start_time}}</td>
           </tr>
         </tbody>
       </table>

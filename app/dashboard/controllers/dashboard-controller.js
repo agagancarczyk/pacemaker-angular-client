@@ -18,6 +18,9 @@
     vm.userData = '';
     vm.userProfile = '';
     vm.activities = '';
+    vm.caloriesSum = 0;
+    vm.distanceSum = 0;
+    vm.activitiesSum = 0;
 
     /*
      * Get User's Resources
@@ -40,7 +43,20 @@
      */
     FitnessActivities.getFeeds().success(function (data) {
       vm.activities = data.items;
-      console.log(vm.activities);
+      vm.activitiesSum = vm.activities.length;
+
+      var i = 0;
+      while (i < vm.activities.length) {
+        vm.caloriesSum = vm.caloriesSum + vm.activities[i].total_calories;
+        ++i;
+      }
+
+      var j = 0;
+      while (j < vm.activities.length) {
+        vm.distanceSum = vm.distanceSum + vm.activities[j].total_distance;
+        vm.distanceToFixed = vm.distanceSum.toFixed();
+        ++j;
+      }
     });
 
     vm.dashboard = function () {
