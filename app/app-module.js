@@ -14,6 +14,9 @@
       'home',
       'ngCookies',
       'dashboard',
-      'activities'
+      'activities',
+      'training',
+      'reports',
+      'friends'
     ]);
 }());
