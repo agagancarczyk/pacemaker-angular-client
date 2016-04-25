@@ -35,7 +35,10 @@
      */
     Users.getUserProfile().success(function (data) {
       vm.userProfile = data;
-      console.log(vm.userProfile);
+      vm.bDate = new Date(vm.userProfile.birthday);
+      vm.bMnth = ("0" + (vm.bDate.getMonth()+1)).slice(-2),
+      vm.bDay  = ("0" + vm.bDate.getDate()).slice(-2);
+      vm.fullBDate = vm.bDay + '-' + vm.bMnth + '-' + vm.bDate.getFullYear();
     });
 
     /*
