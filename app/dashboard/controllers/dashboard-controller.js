@@ -62,6 +62,10 @@
       }
     });
 
+    Users.getUserResourcesWeight().success(function (data) {
+      vm.weight = data.items[0].weight;
+    });
+
     vm.dashboard = function () {
       $state.go('dashboard');
     };

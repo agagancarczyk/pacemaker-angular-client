@@ -33,6 +33,22 @@
 
     /**
     * @ngdoc method
+    * @name getUserResourcesWeight
+    * @methodOf pacemakerClient.Users
+    * @description
+    * Returns user's weight.
+    */
+    UsersBase.getUserResourcesWeight = function (response, callback) {
+     return $http.get(apiBaseurl + '/weight', {
+       headers: {
+          'Authorization': 'Bearer ' + $cookies.get('access_token'),
+          'Accept': 'application/vnd.com.runkeeper.WeightFeed+json'
+       }
+     });
+   };
+
+    /**
+    * @ngdoc method
     * @name getUserProfile
     * @methodOf pacemakerClient.Users
     * @description
