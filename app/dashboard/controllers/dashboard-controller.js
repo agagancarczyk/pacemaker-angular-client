@@ -62,6 +62,9 @@
       }
     });
 
+    /*
+     * Get User's Weight Info
+     */
     Users.getUserResourcesWeight().success(function (data) {
       vm.weight = data.items[0].weight;
     });

@@ -13,6 +13,7 @@
       'ui.bootstrap',
       'home',
       'ngCookies',
-      'dashboard'
+      'dashboard',
+      'activities'
     ]);
 }());
