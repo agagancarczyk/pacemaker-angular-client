@@ -4,7 +4,7 @@
 describe('TrainingCtrl', function () {
   var ctrl;
 
-  beforeEach(module('training'));
+  beforeEach(module('training','pacemakerClient'));
 
   beforeEach(inject(function ($rootScope, $controller) {
     ctrl = $controller('TrainingCtrl');
