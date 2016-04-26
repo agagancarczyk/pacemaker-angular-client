@@ -1,2 +1,83 @@
-<h2>activities</h2>
-<p>{{activities.ctrlName}}</p>
+<!--Side Nav-->
+<nav class="menu" id="theMenu">
+  <div class="menu-wrap">
+    <h3>
+      <li><a class="nav-item" href="" ng-click="">Settings</a></li>
+      <li><a class="nav-item" href="" ng-click="dashboard.logout()">Logout</a></li>
+    </h3>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div id="menuToggle"><i class="fa fa-bars fa-3x"></i></div>
+</nav>
+<!--Top Nav-->
+<div class="col-md-12">
+  <div class="top-panel">
+    <div class="col-md-2"></div>
+    <div class="col-md-2"><h2><br><strong>{{dashboard.userProfile.name}}</strong></h2></div><br>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-primary" data-ui-sref="dashboard"><i class="fa fa-home fa-3x"></i><br><strong>Dashboard</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="reports"><i class="fa fa-bar-chart fa-3x"></i><br><strong>Reports</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="training"><i class="fa fa-calendar-o fa-3x"></i><br><strong>Training</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="activities"><i class="fa fa-calendar fa-3x"></i><br><strong>Activities</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="friends"><i class="fa fa-users fa-3x"></i><br><strong>Friends</strong></button>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<!--Body-->
+<div class="col-md-12">
+  <div class="col-md-2"></div>
+  <div class="col-md-2">
+    <div class="well">
+      <h4 class="left-panel"><strong>Activity</strong></h4><hr>
+      <button type="button" class="btn btn-success"><strong><i class="fa fa-plus-square-o"></i> New Activity</strong></button>
+    </div>
+    <div class="well">
+      <h4 class="left-panel"><strong>Activities Recap</strong></h4>
+      <table class="table table-responsive">
+        <tbody>
+          <tr ng-repeat="activity in activities.activities">
+            <h4>{{activities.monthName}}</h4>
+            <td>{{activity.start_time.slice(4,7)}}</td>
+            <td>{{activity.type}}</td>
+            <td>{{((activity.total_distance)/1000).toFixed(2)}}km</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h4><strong></strong></h4><br>
+      <table class="table table-responsive">
+        <tbody>
+          <tr>
+            <td><strong>KM</strong></td>
+            <td><strong>DURATION</strong></td>
+            <td><strong>AVERAGE SPEED</strong></td>
+            <td><strong>CALORIES BURNED</strong></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-road"></i><strong></strong></td>
+            <td><i class="fa fa-clock-o"></i><strong></strong></td>
+            <td><i class="fa fa-tachometer"></i><strong></strong></td>
+            <td><i class="fa fa-fire"></i><strong></strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  $('#menuToggle, .menu-close').on('click', function () {
+    $('#menuToggle').toggleClass('active');
+		$('body').toggleClass('body-push-toleft');
+		$('#theMenu').toggleClass('menu-open');
+	});
+})(jQuery)
+</script>

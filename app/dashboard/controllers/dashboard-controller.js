@@ -17,6 +17,7 @@
     vm.ctrlName = 'DashboardCtrl';
     vm.userData = '';
     vm.userProfile = '';
+    vm.location = '';
     vm.activities = '';
     vm.caloriesSum = 0;
     vm.distanceSum = 0;
@@ -35,6 +36,7 @@
      */
     Users.getUserProfile().success(function (data) {
       vm.userProfile = data;
+      vm.location = vm.userProfile.location;
       vm.bDate = new Date(vm.userProfile.birthday);
       vm.bMnth = ("0" + (vm.bDate.getMonth()+1)).slice(-2),
       vm.bDay  = ("0" + vm.bDate.getDate()).slice(-2);

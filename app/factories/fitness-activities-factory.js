@@ -23,13 +23,30 @@
     * Returns user's recent activities.
     */
     FitnessActivitiesBase.getFeeds = function (response, callback) {
-      return $http.get(apiBaseurl + '/fitnessActivities?pageSize=4', {
+      return $http.get(apiBaseurl + '/fitnessActivities', {
         headers: {
            'Authorization': 'Bearer ' + $cookies.get('access_token'),
            'Accept': 'application/vnd.com.runkeeper.FitnessActivityFeed+json'
         }
       });
     };
+
+    /**
+    * @ngdoc method
+    * @name newActivity
+    * @methodOf pacemakerClient.FitnessActivities
+    * @description
+    * Creates new activity.
+    */
+    FitnessActivitiesBase.newActivity = function (response, callback) {
+      return $http.post(apiBaseurl + '/fitnessActivities', {
+        headers: {
+           'Authorization': 'Bearer ' + $cookies.get('access_token'),
+           'Accept': 'application/vnd.com.runkeeper.NewFitnessActivity+json'
+        }
+      });
+    };
+
     return FitnessActivitiesBase;
   }
 }());
