@@ -12,12 +12,18 @@
     .module('activities')
     .controller('ActivitiesCtrl', ActivitiesCtrl);
 
-  function ActivitiesCtrl(Users, FitnessActivities, $stateParams, $cookies, $state) {
+  function ActivitiesCtrl(Users, FitnessActivities, $stateParams, $cookies, $state, $scope) {
     var vm = this;
     vm.ctrlName = 'ActivitiesCtrl';
     vm.userProfile = '';
     vm.activities = '';
     vm.monthName = '';
+
+    $scope.typeSelectedActivity = null;
+    $scope.setSelected = function (typeSelectedActivity) {
+      $scope.typeSelectedActivity = typeSelectedActivity;
+      console.log($scope.typeSelectedActivity);
+    };
 
     /*
      * Get User's Profile

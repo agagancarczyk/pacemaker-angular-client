@@ -33,13 +33,14 @@
   <div class="col-md-2">
     <div class="well">
       <h4 class="left-panel"><strong>Activity</strong></h4><hr>
-      <button type="button" class="btn btn-success" data-ui-sref="activityCreation.step1"><strong><i class="fa fa-plus-square-o"></i> New Activity</strong></button>
+      <button type="button" class="btn btn-info" data-ui-sref="activityCreation.step1"><strong><i class="fa fa-plus-square-o"></i> New Activity</strong></button>
     </div>
     <div class="well">
       <h4 class="left-panel"><strong>Activities Recap</strong></h4>
       <table class="table table-responsive">
         <tbody>
-          <tr ng-repeat="activity in activities.activities">
+          <tr ng-repeat="activity in activities.activities"
+          ng-click="setSelected(activity.type)" ng-class="{selected: activity.type === typeSelectedActivity}">
             <h4>{{activities.monthName}}</h4>
             <td>{{activity.start_time.slice(4,7)}}</td>
             <td>{{activity.type}}</td>
@@ -51,7 +52,7 @@
   </div>
   <div class="col-md-6">
     <div class="well">
-      <h4><strong>ACTIVITY DETAILS</strong></h4><br>
+      <h4><strong>ACTIVITY: {{typeSelectedActivity}}</strong></h4><br>
       <table class="table table-responsive">
         <tbody>
           <tr>
@@ -68,7 +69,6 @@
           </tr>
         </tbody>
       </table>
-      <div data-ui-view></div>
     </div>
   </div>
 </div>
