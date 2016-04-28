@@ -30,20 +30,22 @@
 <!--Body-->
 <div class="col-md-12">
   <div class="col-md-2"></div>
-  <div class="col-md-2"></div>
-
-  <div class="col-md-6">
+  <div class="col-md-8">
     <div class="well">
-        <h4><strong>NEW ACTIVITY</strong></h4><br>
+      <h4><strong>NEW ACTIVITY</strong></h4><br>
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs easy-style type-one">
+      <ul class="nav nav-tabs easy-style type-one">      
         <li ui-sref-active="active">
-          <a ui-sref=""><strong>Step 1: Activity/Equipment Type</strong></a>
+          <a ui-sref="activityCreation.step1"><strong>Step 1: Activity/Equipment Type</strong></a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref=""><strong>Step 2: Additional Details</strong></a>
+          <a ui-sref="activityCreation.step2"><strong>Step 2: Additional Details</strong></a>
         </li>
       </ul>
+
+
+
+      <div data-ui-view></div>
     </div>
   </div>
 </div>
