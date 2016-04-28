@@ -12,17 +12,17 @@
     .module('activities')
     .controller('ActivitiesCtrl', ActivitiesCtrl);
 
-  function ActivitiesCtrl(Users, FitnessActivities, $stateParams, $cookies, $state, $scope) {
+  function ActivitiesCtrl(Users, FitnessActivities, $stateParams, $cookies, $state, $rootScope) {
     var vm = this;
     vm.ctrlName = 'ActivitiesCtrl';
     vm.userProfile = '';
     vm.activities = '';
     vm.monthName = '';
 
-    $scope.typeSelectedActivity = null;
-    $scope.setSelected = function (typeSelectedActivity) {
-      $scope.typeSelectedActivity = typeSelectedActivity;
-      console.log($scope.typeSelectedActivity);
+    $rootScope.typeSelectedActivity = null;
+    $rootScope.setSelected = function (typeSelectedActivity) {
+      $rootScope.typeSelectedActivity = typeSelectedActivity;
+      console.log($rootScope.typeSelectedActivity);
     };
 
     /*

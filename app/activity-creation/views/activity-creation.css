@@ -2,6 +2,10 @@ a {
   color: white;
 }
 
-a:hover {
-  color: #001031;
+ a.active, a.active:hover {
+   color: black;
+ }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: black;
 }
