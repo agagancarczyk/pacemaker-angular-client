@@ -17,6 +17,7 @@
       'activities',
       'training',
       'reports',
-      'friends'
+      'friends',
+      'activityCreation'
     ]);
 }());

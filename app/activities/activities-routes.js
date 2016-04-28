@@ -12,12 +12,6 @@
         templateUrl: 'activities/views/activities.tpl.html',
         controller: 'ActivitiesCtrl',
         controllerAs: 'activities'
-      })
-      .state('newActivity', {
-        url: '/newActivity',
-        templateUrl: 'activities/views/new-activity.tpl.html',
-        controller: 'NewActivityCtrl',
-        controllerAs: 'newActivity'
       });
   }
 }());

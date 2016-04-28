@@ -12,11 +12,19 @@
     .module('activities')
     .controller('ActivitiesCtrl', ActivitiesCtrl);
 
-  function ActivitiesCtrl(FitnessActivities, $stateParams, $cookies, $state) {
+  function ActivitiesCtrl(Users, FitnessActivities, $stateParams, $cookies, $state) {
     var vm = this;
     vm.ctrlName = 'ActivitiesCtrl';
+    vm.userProfile = '';
     vm.activities = '';
     vm.monthName = '';
+
+    /*
+     * Get User's Profile
+     */
+    Users.getUserProfile().success(function (data) {
+      vm.userProfile = data;
+    });
 
     /*
      * Get User's Activities
