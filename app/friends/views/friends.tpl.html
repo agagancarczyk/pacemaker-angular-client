@@ -1,2 +1,40 @@
-<h2>friends</h2>
-<p>{{friends.ctrlName}}</p>
+<!--Side Nav-->
+<nav class="menu" id="theMenu">
+  <div class="menu-wrap">
+    <h3>
+      <li><a class="nav-item" href="" ng-click="">Settings</a></li>
+      <li><a class="nav-item" href="" ng-click="dashboard.logout()">Logout</a></li>
+    </h3>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div id="menuToggle"><i class="fa fa-bars fa-3x"></i></div>
+</nav>
+<!--Top Nav-->
+<div class="col-md-12">
+  <div class="top-panel">
+    <div class="col-md-2"></div>
+    <div class="col-md-2"><h2><br><strong>{{friends.userProfile.name}}</strong></h2></div><br>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-primary" data-ui-sref="dashboard"><i class="fa fa-home fa-3x"></i><br><strong>Dashboard</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="reports"><i class="fa fa-bar-chart fa-3x"></i><br><strong>Reports</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="activities"><i class="fa fa-calendar fa-3x"></i><br><strong>Activities</strong></button>
+      <button type="button" class="btn btn-primary" data-ui-sref="friends"><i class="fa fa-users fa-3x"></i><br><strong>Friends</strong></button>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<!--Body-->
+<div class="col-md-12"></div>
+
+<script>
+(function () {
+  $('#menuToggle, .menu-close').on('click', function () {
+    $('#menuToggle').toggleClass('active');
+    $('body').toggleClass('body-push-toleft');
+    $('#theMenu').toggleClass('menu-open');
+  });
+})(jQuery)
+</script>
