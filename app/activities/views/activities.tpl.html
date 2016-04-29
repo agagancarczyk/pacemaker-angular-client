@@ -49,6 +49,11 @@
       </table>
     </div>
   </div>
+  <div class="col-md-6" ng-if="typeSelectedActivity == null">
+    <div class="well">
+      <h3><strong>SELECT ACTIVITY</strong></h3><br>
+    </div>
+  </div>
   <div class="col-md-6" ng-if="typeSelectedActivity != null">
     <div class="well">
       <h4><strong>ACTIVITY: {{typeSelectedActivity.type}}</strong></h4><br>
