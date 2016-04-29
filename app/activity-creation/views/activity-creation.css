@@ -9,3 +9,28 @@ a {
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   color: black;
 }
+
+.col-md-2.activity-details {
+  padding-top: 1%;
+  background-color: white;
+}
+
+td#activity-details-row {
+  color: black;
+}
+
+.btn-save {
+    color: white;
+    background-color: #009933;
+    border-color: #009933;
+    height: 53px;
+    width: 180px;
+}
+
+.btn-save:hover {
+  color: white;
+}
+
+p.save-bttn {
+  font-size: 16px;
+}

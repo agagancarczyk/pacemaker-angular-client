@@ -59,7 +59,7 @@
       var j = 0;
       while (j < vm.activities.length) {
         vm.distanceSum = vm.distanceSum + vm.activities[j].total_distance;
-        vm.distanceToFixed = vm.distanceSum.toFixed();
+        vm.distanceToFixed = vm.distanceSum;
         ++j;
       }
     });

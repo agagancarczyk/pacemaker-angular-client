@@ -15,12 +15,11 @@
 <!--Top Nav-->
 <div class="col-md-12">
   <div class="top-panel">
-    <div class="col-md-2"></div>
-    <div class="col-md-2"><h2><br><strong>{{activityCreation.userProfile.name}}</strong></h2></div><br>
+  <div class="col-md-2"></div>
+  <div class="col-md-2"><h2><br><strong>{{activityCreation.userProfile.name}}</strong></h2></div><br>
     <div class="col-md-6">
       <button type="button" class="btn btn-primary" data-ui-sref="dashboard"><i class="fa fa-home fa-3x"></i><br><strong>Dashboard</strong></button>
       <button type="button" class="btn btn-primary" data-ui-sref="reports"><i class="fa fa-bar-chart fa-3x"></i><br><strong>Reports</strong></button>
-      <button type="button" class="btn btn-primary" data-ui-sref="training"><i class="fa fa-calendar-o fa-3x"></i><br><strong>Training</strong></button>
       <button type="button" class="btn btn-primary" data-ui-sref="activities"><i class="fa fa-calendar fa-3x"></i><br><strong>Activities</strong></button>
       <button type="button" class="btn btn-primary" data-ui-sref="friends"><i class="fa fa-users fa-3x"></i><br><strong>Friends</strong></button>
     </div>
@@ -33,15 +32,17 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs easy-style type-one">
     <li ui-sref-active="active">
-      <a ui-sref="activityCreation.step1"><strong>Step 1: Activity/Equipment Type</strong></a>
+      <a ui-sref="activityCreation.step1"><p><strong>Step 1: Activity/Equipment Type</strong></p></a>
     </li>
     <li ui-sref-active="active">
-      <a ui-sref="activityCreation.step2"><strong>Step 2: Additional Details</strong></a>
+      <a ui-sref="activityCreation.step2"><p><strong>Step 2: Additional Details</strong></p></a>
+    </li>
+    <li ui-sref-active="active">
+      <button type="button" class="btn btn-save"><p class="save-bttn"><strong>Step 3: Save Activity</strong></p></button>
     </li>
   </ul><br>
 </div>
 <div data-ui-view></div>
-</div>
 
 <script>
 (function () {

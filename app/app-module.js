@@ -15,9 +15,9 @@
       'ngCookies',
       'dashboard',
       'activities',
-      'training',
       'reports',
       'friends',
-      'activityCreation'
+      'activityCreation',
+      'chart.js'
     ]);
 }());
