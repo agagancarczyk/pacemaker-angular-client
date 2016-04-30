@@ -12,21 +12,47 @@
     .module('reports')
     .controller('ReportsCtrl', ReportsCtrl);
 
-  function ReportsCtrl(Users, $cookies) {
+  function ReportsCtrl(Users, FitnessActivities, $cookies) {
     var vm = this;
     vm.ctrlName = 'ReportsCtrl';
     vm.userProfile = '';
+    vm.activityType = '';
 
     /*
      * Get User's Profile
      */
     Users.getUserProfile().success(function (data) {
       vm.userProfile = data;
-      vm.location = vm.userProfile.location;
-      vm.bDate = new Date(vm.userProfile.birthday);
-      vm.bMnth = ("0" + (vm.bDate.getMonth()+1)).slice(-2),
-      vm.bDay  = ("0" + vm.bDate.getDate()).slice(-2);
-      vm.fullBDate = vm.bDay + '-' + vm.bMnth + '-' + vm.bDate.getFullYear();
     });
+
+    /*
+     * Get User's Fitness Activities
+     */
+    FitnessActivities.getFeeds().success(function (data) {
+      vm.activities = data.items;
+      for (var i = 0; i < vm.activities.length; i++) {
+        vm.activityType = vm.activities[i].type;
+
+        if (vm.activityType == 'Cycling'){
+          vm.cycling = function () {
+             console.log('success cycling!');
+          };
+        }
+
+        if (vm.activityType == 'Walking'){
+          vm.walking = function () {
+             console.log('success walking!');
+          };
+        }
+
+        if (vm.activityType == 'Running'){
+          vm.running = function () {
+             console.log('success running!');
+          };
+        }
+
+      }
+    });
+
   }
 }());
