@@ -1,9 +1,24 @@
 .selected {
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #82a9cc;
+  border-color: #82a9cc;
   color: white;
 }
 
 span.line-legend-text {
   color: white;
+}
+
+span.label.label-default {
+  background-color: #82a9cc;
+  color: white;
+}
+
+.btn-info {
+  background-color: #82a9cc;
+  border-color: #82a9cc;
+}
+
+.btn-info:hover {
+  background-color: #255a88;
+  border-color: #255a88;
 }

@@ -35,15 +35,15 @@
       <button type="button" class="btn btn-info" data-ui-sref="activityCreation.step1"><strong><i class="fa fa-plus-square-o"></i> New Activity</strong></button>
     </div>
     <div class="well">
-      <h4 class="left-panel"><strong>Activities Recap</strong></h4>
+      <h4 class="left-panel"><strong>Activities Recap</strong></h4><hr>
       <table class="table table-responsive">
         <tbody>
           <tr ng-repeat="activity in activities.activities"
           ng-click="setSelected(activity)" ng-class="{selected: activity === typeSelectedActivity}">
-            <h4>{{activities.monthName}}</h4>
-            <td>{{activity.start_time.slice(4,7)}}</td>
-            <td>{{activity.type}}</td>
-            <td>{{((activity.total_distance)/1000).toFixed(2)}}km</td>
+            <h4><span class="label label-default"><strong>{{activities.monthName}}</strong></span></h4>
+            <td><strong>{{activity.start_time.slice(4,7)}}</strong></td>
+            <td><strong>{{activity.type}}</strong></td>
+            <td><strong>{{((activity.total_distance)/1000).toFixed(2)}}km</strong></td>
           </tr>
         </tbody>
       </table>
