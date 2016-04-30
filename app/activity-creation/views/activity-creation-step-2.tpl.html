@@ -6,26 +6,32 @@
         <tbody>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="startdate" class="control-label pull-left">Date of Activity:</label>
-              <input type="text" class="form-control" min-date="" name="" datepicker-popup="" ng-model="" is-open="" datepicker-options="" ng-required="true" close-text="Close" />
+              <label for="start_time" class="control-label pull-left">Date of Activity:</label>
+              <input type="text" class="form-control" min-date="" id="start_time" name="start_time" datepicker-popup="" ng-model="" is-open="" datepicker-options="" ng-required="true" close-text="Close" />
             </div>
           </tr>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">Average Heart Rate (optional):</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
+              <label for="average_heart_rate" class="control-label pull-left">Average Heart Rate (optional):</label>
+              <input type="text" class="form-control" id="average_heart_rate" name="average_heart_rate" ng-model="" ng-required="true" />
             </div>
           </tr>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">Activity Viewable By:</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
+              <label for="duration" class="control-label pull-left">Duration [seconds]:</label>
+              <input type="text" class="form-control" id="duration" name="duration" ng-model="" ng-required="true" />
             </div>
           </tr>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">Equipment Type:</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
+              <label for="equipment" class="control-label pull-left">Equipment Type:</label>
+              <select type="text" class="form-control" id="equipment" name="equipment" ng-model="" ng-required="true">
+                <option value="None">None</option>
+                <option value="Treadmill">Treadmill</option>
+                <option value="Stationary Bike">Stationary Bike</option>
+                <option value="Elliptical">Elliptical</option>
+                <option value="Row Machine">Row Machine</option>
+              </select>
             </div>
           </tr>
         </tbody>
@@ -37,26 +43,20 @@
         <tbody>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">Duration:</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
+              <label for="total_distance" class="control-label pull-left">Distance [meters]:</label>
+              <input type="text" class="form-control" id="total_distance" name="total_distance" ng-model="" ng-required="true" />
             </div>
           </tr>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">Distance:</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
+              <label for="total_calories" class="control-label pull-left">Calories:</label>
+              <input type="text" class="form-control" id="total_calories" name="total_calories" ng-model="" ng-required="true" />
             </div>
           </tr>
           <tr>
             <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">Calories:</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
-            </div>
-          </tr>
-          <tr>
-            <div class="form-group text-box cell-pad cell-width">
-              <label for="" class="control-label pull-left">How did it go?:</label>
-              <input type="text" class="form-control" name="" ng-model="" ng-required="true" />
+              <label for="notes" class="control-label pull-left">How did it go?:</label>
+              <textarea type="text" class="form-control" id="notes" name="notes" cols="40" rows="5" ng-model="" ng-required="true" />
             </div>
           </tr>
         </tbody>

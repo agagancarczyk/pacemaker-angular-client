@@ -1,9 +1,10 @@
 .btn-sport {
     color: white;
     background-color: #255a88;
-    border-color: #255a88;
+    border-color: #022b4c;
     width: 100px;
     height: 100px;
+    margin-right: 10px;
 }
 
 .btn-sport:hover {
@@ -12,4 +13,14 @@
 
 .sport-bttns {
   padding-left: 19%;
+}
+
+img {
+  margin-top: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+.btn-group {
+  margin-right: 13%;
 }
