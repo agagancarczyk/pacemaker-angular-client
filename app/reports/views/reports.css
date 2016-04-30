@@ -1,0 +1,20 @@
+.well.reports {
+  background-color: white;
+  color: #001031;
+  height: 20px;
+}
+
+.icons-heart {
+  width: 15px;
+  height: 15px;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+}
+
+.reports {
+  font-size: 16px;
+  padding-bottom: 20%;
+}

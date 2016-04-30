@@ -10,6 +10,14 @@ button.btn.btn-primary {
   height: 80px;
 }
 
+.fa.fa-info-circle, .fa.fa-area-chart {
+  color: #6bc6e1;
+}
+
+h4.top-panel-title {
+  color: #6bc6e1;
+}
+
 .well {
   background-color: #022b4c;
   border-color: #022b4c;
@@ -19,7 +27,8 @@ button.btn.btn-primary {
 }
 
 table {
-  color: white;
+  color: #6bc6e1;
+  font-weight: 300;
 }
 
 h3, h5 {
