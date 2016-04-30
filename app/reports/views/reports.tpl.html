@@ -21,23 +21,13 @@
   <div class="col-md-2"></div>
   <div class="col-md-2">
     <div class="well reports">
-      <p class="reports"><img src="/images/favorite-red.png" class="icons"><strong> All Cardio</strong></p>
+      <img src="/images/favorite-red.png" class="icons"><strong> All Cardio</strong>
     </div>
     <div class="reports" ng-repeat="activity in reports.activities"
     ng-click="setSelected(activity)" ng-class="{selected: activity === typeSelectedActivity}">
       <div class="well reports">
-        <p class="reports"><img src="/images/sports-32-2.png" class="icons"><strong> {{activity.type}}</strong></p>
+        <img src="/images/sports-32-2.png" class="icons"><strong> {{activity.type}}</strong>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-(function () {
-  $('#menuToggle, .menu-close').on('click', function () {
-    $('#menuToggle').toggleClass('active');
-		$('body').toggleClass('body-push-toleft');
-		$('#theMenu').toggleClass('menu-open');
-	});
-})(jQuery)
-</script>
