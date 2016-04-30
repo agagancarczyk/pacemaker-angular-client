@@ -12,11 +12,14 @@
     .module('reports')
     .controller('ReportsCtrl', ReportsCtrl);
 
-  function ReportsCtrl(Users, FitnessActivities, $cookies) {
+  function ReportsCtrl(Users, FitnessActivities, $cookies, $rootScope) {
     var vm = this;
     vm.ctrlName = 'ReportsCtrl';
     vm.userProfile = '';
-    vm.activityType = '';
+    vm.activities = '';
+    $rootScope.typeSelectedActivity = null;
+
+    vm.cyclingActivities = [];
 
     /*
      * Get User's Profile
@@ -30,27 +33,10 @@
      */
     FitnessActivities.getFeeds().success(function (data) {
       vm.activities = data.items;
-      for (var i = 0; i < vm.activities.length; i++) {
-        vm.activityType = vm.activities[i].type;
 
-        if (vm.activityType == 'Cycling'){
-          vm.cycling = function () {
-             console.log('success cycling!');
-          };
-        }
-
-        if (vm.activityType == 'Walking'){
-          vm.walking = function () {
-             console.log('success walking!');
-          };
-        }
-
-        if (vm.activityType == 'Running'){
-          vm.running = function () {
-             console.log('success running!');
-          };
-        }
-
+      $rootScope.setSelected = function (typeSelectedActivity) {
+        $rootScope.typeSelectedActivity = typeSelectedActivity;
+          console.log($rootScope.typeSelectedActivity);
       }
     });
 
