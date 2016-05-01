@@ -17,7 +17,6 @@
     vm.ctrlName = 'ReportsCtrl';
     vm.userProfile = '';
     vm.activities = '';
-    $rootScope.typeSelectedActivity = null;
     vm.walkingActivities = [];
     vm.runningActivities = [];
     vm.cyclingActivities = [];
@@ -35,7 +34,9 @@
     FitnessActivities.getFeeds().success(function (data) {
       vm.activities = data.items;
     });
+
       vm.running = function () {
+        vm.current = 'Running';
         vm.runningActivities = [];
         for (var i = 0; i < vm.activities.length; i++){
           if (vm.activities[i].type === 'Running'){
@@ -46,8 +47,9 @@
       };
 
       vm.walking = function () {
+        vm.current = 'Walking';
         vm.walkingActivities = [];
-        for (var i = 0; i <= vm.activities.length; i++){
+        for (var i = 0; i < vm.activities.length; i++){
           if (vm.activities[i].type === 'Walking'){
             vm.walkingActivities.push(vm.activities[i]);
          }
@@ -56,17 +58,14 @@
       };
 
       vm.cycling = function () {
+        vm.current = 'Cycling';
         vm.cyclingActivities = [];
-        for (var i = 0; i <= vm.activities.length; i++){
+        for (var i = 0; i < vm.activities.length; i++){
           if (vm.activities[i].type === 'Cycling'){
             vm.cyclingActivities.push(vm.activities[i]);
          }
        }
        console.log(vm.cyclingActivities);
       };
-
-
-
-
   }
 }());

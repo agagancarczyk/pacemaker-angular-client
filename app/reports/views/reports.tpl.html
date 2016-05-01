@@ -35,10 +35,8 @@
     </div>
   </div>
   <div class="col-md-6">
-    <table>
-       <tr>
-         <td><p>{{reports.runningActivities}}</p></td>
-       </tr>
-    </table>
+    <p ng-if="reports.current === 'Running'">{{reports.runningActivities}}</p>
+    <p ng-if="reports.current === 'Walking'">{{reports.walkingActivities}}</p>
+    <p ng-if="reports.current === 'Cycling'">{{reports.cyclingActivities}}</p>
   </div>
 </div>
