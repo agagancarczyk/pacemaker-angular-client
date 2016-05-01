@@ -18,16 +18,27 @@
 </div>
 <!--Body-->
 <div class="col-md-12">
+
   <div class="col-md-2"></div>
   <div class="col-md-2">
     <div class="well reports">
       <img src="/images/favorite-red.png" class="icons"><strong> All Cardio</strong>
     </div>
-    <div class="reports" ng-repeat="activity in reports.activities"
-    ng-click="setSelected(activity)" ng-class="{selected: activity === typeSelectedActivity}">
-      <div class="well reports">
-        <img src="/images/sports-32-2.png" class="icons"><strong> {{activity.type}}</strong>
-      </div>
+    <div class="well reports" ng-click="reports.running()">
+      <img src="/images/sports-32-2.png" class="icons"><strong> Running</strong>
     </div>
+    <div class="well reports" ng-click="reports.walking()">
+      <img src="/images/sports-32-2.png" class="icons"><strong> Walking</strong>
+    </div>
+    <div class="well reports" ng-click="reports.cycling()">
+      <img src="/images/sports-32-2.png" class="icons"><strong> Cycling</strong>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <table>
+       <tr>
+         <td><p>{{reports.runningActivities}}</p></td>
+       </tr>
+    </table>
   </div>
 </div>
