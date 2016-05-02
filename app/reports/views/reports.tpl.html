@@ -37,7 +37,11 @@
   <div class="col-md-6">
     <div ng-if="reports.current === 'Running'">
       <div class="well">
-        <h4 class="left-panel"><strong>RUNNING ACTIVITIES</strong></h4>
+        <h4 class="left-panel"><strong>DISTANCE</strong></h4>
+        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+      </div>
+      <div class="well">
+        <h4 class="left-panel"><strong><i class="fa fa-trophy" aria-hidden="true"></i> ACHIEVEMENTS</strong></h4>
         <table class="table table-responsive">
           <tbody>
             <tr>
@@ -58,7 +62,11 @@
     </div>
     <div ng-if="reports.current === 'Walking'">
       <div class="well">
-        <h4 class="left-panel"><strong>WALKING ACTIVITIES</strong></h4>
+        <h4 class="left-panel"><strong>DISTANCE</strong></h4>
+        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+      </div>
+      <div class="well">
+        <h4 class="left-panel"><strong><i class="fa fa-trophy" aria-hidden="true"></i> ACHIEVEMENTS</strong></h4>
         <table class="table table-responsive">
           <tbody>
             <tr>
@@ -79,7 +87,12 @@
     </div>
     <div ng-if="reports.current === 'Cycling'">
       <div class="well">
-        <h4 class="left-panel"><strong>CYCLING ACTIVITIES</strong></h4>
+        <canvas id="bar" class="chart chart-bar" chart-data="data"
+          chart-labels="labels" chart-series="series">
+        </canvas>
+      </div>
+      <div class="well">
+        <h4 class="left-panel"><strong><i class="fa fa-trophy" aria-hidden="true"></i> ACHIEVEMENTS</strong></h4>
         <table class="table table-responsive">
           <tbody>
             <tr>
