@@ -35,8 +35,68 @@
     </div>
   </div>
   <div class="col-md-6">
-    <p ng-if="reports.current === 'Running'">{{reports.runningActivities}}</p>
-    <p ng-if="reports.current === 'Walking'">{{reports.walkingActivities}}</p>
-    <p ng-if="reports.current === 'Cycling'">{{reports.cyclingActivities}}</p>
+    <div ng-if="reports.current === 'Running'">
+      <div class="well">
+        <h4 class="left-panel"><strong>RUNNING ACTIVITIES</strong></h4>
+        <table class="table table-responsive">
+          <tbody>
+            <tr>
+              <td><strong>DISTANCE</strong></td>
+              <td><strong>DURATION</strong></td>
+              <td><strong>AVERAGE SPEED</strong></td>
+              <td><strong>CALORIES BURNED</strong></td>
+            </tr>
+            <tr ng-repeat="activity in reports.runningActivities">
+              <td><strong> {{((activity.total_distance)/1000).toFixed(2)}} km</strong></td>
+              <td><strong> {{activity.duration/60}} min</strong></td>
+              <td><strong> {{(((((activity.total_distance)/1000).toFixed(2))/(activity.duration/60))*60).toFixed(2)}} km/hr</strong></td>
+              <td><strong> {{activity.total_calories}} cal</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div ng-if="reports.current === 'Walking'">
+      <div class="well">
+        <h4 class="left-panel"><strong>WALKING ACTIVITIES</strong></h4>
+        <table class="table table-responsive">
+          <tbody>
+            <tr>
+              <td><strong>DISTANCE</strong></td>
+              <td><strong>DURATION</strong></td>
+              <td><strong>AVERAGE SPEED</strong></td>
+              <td><strong>CALORIES BURNED</strong></td>
+            </tr>
+            <tr ng-repeat="activity in reports.walkingActivities">
+              <td><strong> {{((activity.total_distance)/1000).toFixed(2)}} km</strong></td>
+              <td><strong> {{activity.duration/60}} min</strong></td>
+              <td><strong> {{(((((activity.total_distance)/1000).toFixed(2))/(activity.duration/60))*60).toFixed(2)}} km/hr</strong></td>
+              <td><strong> {{activity.total_calories}} cal</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div ng-if="reports.current === 'Cycling'">
+      <div class="well">
+        <h4 class="left-panel"><strong>CYCLING ACTIVITIES</strong></h4>
+        <table class="table table-responsive">
+          <tbody>
+            <tr>
+              <td><strong>DISTANCE</strong></td>
+              <td><strong>DURATION</strong></td>
+              <td><strong>AVERAGE SPEED</strong></td>
+              <td><strong>CALORIES BURNED</strong></td>
+            </tr>
+            <tr ng-repeat="activity in reports.cyclingActivities">
+              <td><strong> {{((activity.total_distance)/1000).toFixed(2)}} km</strong></td>
+              <td><strong> {{activity.duration/60}} min</strong></td>
+              <td><strong> {{(((((activity.total_distance)/1000).toFixed(2))/(activity.duration/60))*60).toFixed(2)}} km/hr</strong></td>
+              <td><strong> {{activity.total_calories}} cal</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

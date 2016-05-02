@@ -10,6 +10,12 @@ button.btn.btn-primary {
   height: 80px;
 }
 
+.well.dashboard {
+  background-color: #255a88;
+  border-color: #001031;
+  color: white;
+}
+
 .fa.fa-info-circle, .fa.fa-area-chart {
   color: #82a9cc;
 }

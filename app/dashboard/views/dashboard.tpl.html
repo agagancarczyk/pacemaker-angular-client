@@ -36,7 +36,19 @@
   </div>
   <div class="col-md-6">
     <div class="well">
-      <h4><strong>RECENT ACTIVITIES: {{dashboard.activities.length}}</strong></h4><br>
+      <div class="col-md-4 well dashboard">
+        <p><strong>Total km</strong></p>
+        <i class="fa fa-road"></i><strong> {{((dashboard.distanceToFixed/1000).toFixed(2))}} km</strong>
+      </div>
+      <div class="col-md-4 well dashboard">
+        <p><strong>Total Activities</strong></p>
+        <i class="fa fa-tachometer"></i><strong> {{((dashboard.distanceToFixed/1000).toFixed(2))}}</strong>
+      </div>
+      <div class="col-md-4 well dashboard">
+        <p><strong>Total Calories</strong></p>
+        <i class="fa fa-fire"></i><strong> {{dashboard.caloriesSum}} cal</strong>
+      </div><br>
+      <h4><strong>RECENT ACTIVITIES</strong></h4><br>
       <table class="table table-responsive">
         <tbody>
           <tr>
