@@ -26,6 +26,10 @@
     vm.chartDistanceWalking = [];
     vm.chartDatesCycling = [];
     vm.chartDistanceCycling = [];
+    var lowest = Number.POSITIVE_INFINITY;
+    var highest = Number.NEGATIVE_INFINITY;
+    var tmp;
+
     /*
      * Get User's Profile
      */
@@ -39,6 +43,10 @@
     FitnessActivities.getFeeds().success(function (data) {
       vm.activities = data.items;
     });
+
+    vm.allCardio = function () {
+      vm.current = 'AllCardio';
+    };
 
     vm.running = function () {
       vm.current = 'Running';
@@ -61,6 +69,17 @@
       $rootScope.data = [
         vm.chartDistanceRunning
       ];
+
+      //Achievements
+      for (var i = vm.runningActivities.length-1; i >= 0; i--) {
+        tmp = (vm.runningActivities[i].total_distance.toFixed())/1000;
+        if (tmp < lowest){
+          vm.lowestRecords = vm.runningActivities[i];
+        }
+        if (tmp > highest){
+          vm.highestRecords = vm.runningActivities[i];
+        }
+      }
     };
 
     vm.walking = function () {
@@ -84,6 +103,17 @@
       $rootScope.data = [
         vm.chartDistanceWalking
       ];
+
+      //Achievements
+      for (var i = vm.walkingActivities.length-1; i >= 0; i--) {
+        tmp = (vm.walkingActivities[i].total_distance.toFixed())/1000;
+        if (tmp < lowest){
+          vm.lowestRecords = vm.walkingActivities[i];
+        }
+        if (tmp > highest){
+          vm.highestRecords = vm.walkingActivities[i];
+        }
+      }
     };
 
     vm.cycling = function () {
@@ -107,6 +137,17 @@
       $rootScope.data = [
         vm.chartDistanceCycling
       ];
+
+      //Achievements
+      for (var i = vm.cyclingActivities.length-1; i >= 0; i--) {
+        tmp = (vm.cyclingActivities[i].total_distance.toFixed())/1000;
+        if (tmp < lowest){
+          vm.lowestRecords = vm.cyclingActivities[i];
+        }
+        if (tmp > highest){
+          vm.highestRecords = vm.cyclingActivities[i];
+        }
+      }
     };
   }
 }());
