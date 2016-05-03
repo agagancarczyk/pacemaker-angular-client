@@ -26,6 +26,11 @@
     vm.chartDistanceWalking = [];
     vm.chartDatesCycling = [];
     vm.chartDistanceCycling = [];
+    vm.chartDistancesAllActivities = [];
+    vm.chartCaloriesAllActivities = [];
+    vm.chartDatesAllActivities = [];
+    vm.caloriesSum = 0;
+    vm.distanceSum = 0;
     var lowest = Number.POSITIVE_INFINITY;
     var highest = Number.NEGATIVE_INFINITY;
     var tmp;
@@ -46,6 +51,36 @@
 
     vm.allCardio = function () {
       vm.current = 'AllCardio';
+      vm.chartDistancesAllActivities = [];
+      vm.chartCaloriesAllActivities = [];
+      vm.chartDatesAllActivities = [];
+      vm.caloriesSum = 0;
+      vm.distanceSum = 0;
+
+      for (var i = 0; i < vm.activities.length; i++){
+        vm.chartDistancesAllActivities.push((vm.activities[i].total_distance.toFixed())/1000);
+        vm.chartCaloriesAllActivities.push(vm.activities[i].total_calories);
+        vm.chartDatesAllActivities.push(vm.activities[i].start_time.slice(4,16));
+      };
+
+      //Distance
+      $rootScope.labelsCardio = vm.chartDatesAllActivities;
+      $rootScope.dataCardio = [
+        vm.chartDistancesAllActivities
+      ];
+
+      //Calories
+      $rootScope.labelsCalories = vm.chartDatesAllActivities;
+      $rootScope.dataCalories = [
+        vm.chartCaloriesAllActivities
+      ];
+
+      var i = 0;
+      while (i < vm.activities.length) {
+        vm.caloriesSum = vm.caloriesSum + vm.activities[i].total_calories;
+        vm.distanceSum = vm.distanceSum + vm.activities[i].total_distance;
+        ++i;
+      }
     };
 
     vm.running = function () {

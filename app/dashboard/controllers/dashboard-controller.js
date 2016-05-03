@@ -52,15 +52,10 @@
 
       var i = 0;
       while (i < vm.activities.length) {
+        vm.distanceSum = vm.distanceSum + vm.activities[i].total_distance;
+        vm.distanceToFixed = vm.distanceSum;
         vm.caloriesSum = vm.caloriesSum + vm.activities[i].total_calories;
         ++i;
-      }
-
-      var j = 0;
-      while (j < vm.activities.length) {
-        vm.distanceSum = vm.distanceSum + vm.activities[j].total_distance;
-        vm.distanceToFixed = vm.distanceSum;
-        ++j;
       }
     });
 
