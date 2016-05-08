@@ -1,6 +1,6 @@
 .well.reports {
   background-color: #255a88;
-  border-color: #204f76;
+  border-color: #001031;
   color: white;
 }
 
@@ -18,7 +18,11 @@
   font-size: 16px;
 }
 
-canvas#bar {
+canvas#bar, canvas#line {
   width: 100px;
   height: 20px;
+}
+
+h4.left-panel {
+  color: white;
 }

@@ -18,7 +18,6 @@
 </div>
 <!--Body-->
 <div class="col-md-12">
-
   <div class="col-md-2"></div>
   <div class="col-md-2">
     <div class="well reports" ng-click="reports.allCardio()">
@@ -34,24 +33,42 @@
       <img src="/images/sports-32-2.png" class="icons"><strong> Cycling</strong>
     </div>
   </div>
-  <div class="col-md-6">
-  <!-- TODO -->
+  <div ng-if="reports.current !== 'Running' && reports.current !== 'Walking'
+    && reports.current !== 'Cycling' && reports.current !== 'allCardio'">
+    <div class="col-md-6">
+      <div ng-if="reports.current === 'allCardio'">
+        <div class="well">
+          <div class="col-md-6 well reports">
+            <p><strong>Total km</strong></p>
+            <i class="fa fa-road"></i><strong> {{((reports.distanceSum/1000).toFixed(2))}} km</strong>
+          </div>
+          <div class="col-md-6 well reports">
+            <p><strong>Total Calories</strong></p>
+            <i class="fa fa-fire"></i><strong> {{reports.caloriesSum}} cal</strong>
+          </div>
+            <h4 class="left-panel"><strong>DISTANCE</strong></h4>
+            <canvas id="line" class="chart chart-line" chart-data="dataCardio" chart-labels="labelsCardio" chart-series="series"></canvas>
+            <h4 class="left-panel"><strong>CALORIES BURNED</strong></h4>
+            <canvas id="bar" class="chart chart-bar" chart-data="dataCalories" chart-labels="labelsCalories" chart-series="series"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-md-6">
-    <div ng-if="reports.current === 'AllCardio'">
+    <div ng-if="reports.current === 'allCardio'">
       <div class="well">
-        <div class="col-md-6 well dashboard">
+        <div class="col-md-6 well reports">
           <p><strong>Total km</strong></p>
           <i class="fa fa-road"></i><strong> {{((reports.distanceSum/1000).toFixed(2))}} km</strong>
         </div>
-        <div class="col-md-6 well dashboard">
+        <div class="col-md-6 well reports">
           <p><strong>Total Calories</strong></p>
           <i class="fa fa-fire"></i><strong> {{reports.caloriesSum}} cal</strong>
-        </div><br>
-        <h4 class="left-panel"><strong>DISTANCE</strong></h4>
-        <canvas id="bar" class="chart chart-bar" chart-data="dataCardio" chart-labels="labelsCardio" chart-series="series"></canvas>
-        <h4 class="left-panel"><strong>CALORIES BURNED</strong></h4>
-        <canvas id="bar" class="chart chart-bar" chart-data="dataCalories" chart-labels="labelsCalories" chart-series="series"></canvas>
+        </div>
+          <h4 class="left-panel"><strong>DISTANCE</strong></h4>
+          <canvas id="line" class="chart chart-line" chart-data="dataCardio" chart-labels="labelsCardio" chart-series="series"></canvas>
+          <h4 class="left-panel"><strong>CALORIES BURNED</strong></h4>
+          <canvas id="bar" class="chart chart-bar" chart-data="dataCalories" chart-labels="labelsCalories" chart-series="series"></canvas>
       </div>
     </div>
   </div>
@@ -108,6 +125,7 @@
     </div>
     <div ng-if="reports.current === 'Cycling'">
       <div class="well">
+        <h4 class="left-panel"><strong>DISTANCE</strong></h4>
         <canvas id="bar" class="chart chart-bar" chart-data="data"
           chart-labels="labels" chart-series="series">
         </canvas>

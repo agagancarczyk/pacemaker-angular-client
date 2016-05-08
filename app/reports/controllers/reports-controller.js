@@ -47,10 +47,11 @@
      */
     FitnessActivities.getFeeds().success(function (data) {
       vm.activities = data.items;
+      vm.allCardio();
     });
 
     vm.allCardio = function () {
-      vm.current = 'AllCardio';
+      vm.current = 'allCardio';
       vm.chartDistancesAllActivities = [];
       vm.chartCaloriesAllActivities = [];
       vm.chartDatesAllActivities = [];
@@ -62,13 +63,11 @@
         vm.chartCaloriesAllActivities.push(vm.activities[i].total_calories);
         vm.chartDatesAllActivities.push(vm.activities[i].start_time.slice(4,16));
       };
-
       //Distance
       $rootScope.labelsCardio = vm.chartDatesAllActivities;
       $rootScope.dataCardio = [
         vm.chartDistancesAllActivities
       ];
-
       //Calories
       $rootScope.labelsCalories = vm.chartDatesAllActivities;
       $rootScope.dataCalories = [
