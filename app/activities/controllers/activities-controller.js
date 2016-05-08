@@ -41,46 +41,46 @@
      if(vm.chartData > 0 && vm.chartData < 5.0){
        vm.chartData1 = vm.chartData;
        $rootScope.data = [
-         [vm.chartData1]
+         [vm.chartData0, vm.chartData1]
        ];
      }
      if(vm.chartData >= 5.0 && vm.chartData < 10.0){
        vm.diff1 = vm.chartData - vm.chartData2;
        vm.chartData3 = vm.chartData2 + vm.diff1;
        $rootScope.data = [
-         [vm.chartData2, vm.chartData3]
+         [vm.chartData0, vm.chartData2, vm.chartData3]
        ];
      }
      if(vm.chartData >= 10.0 && vm.chartData < 15.0){
        vm.diff2 = vm.chartData - vm.chartData4;
        vm.chartData5 = vm.chartData4 + vm.diff2;
        $rootScope.data = [
-         [vm.chartData2, vm.chartData4, vm.chartData5]
+         [vm.chartData0, vm.chartData2, vm.chartData4, vm.chartData5]
        ];
      }
      if(vm.chartData >= 15.0 && vm.chartData < 20.0){
        vm.diff3 = vm.chartData - vm.chartData6;
        vm.chartData7 = vm.chartData6 + vm.diff3;
        $rootScope.data = [
-         [vm.chartData2, vm.chartData4, vm.chartData6, vm.chartData7]
+         [vm.chartData0, vm.chartData2, vm.chartData4, vm.chartData6, vm.chartData7]
        ];
      }
      if(vm.chartData >= 20.0 && vm.chartData < 25.0){
        vm.diff4 = vm.chartData - vm.chartData8;
        vm.chartData9 = vm.chartData8 + vm.diff4;
        $rootScope.data = [
-         [vm.chartData2, vm.chartData4, vm.chartData6, vm.chartData8, vm.chartData9]
+         [vm.chartData0, vm.chartData2, vm.chartData4, vm.chartData6, vm.chartData8, vm.chartData9]
        ];
      }
      if(vm.chartData >= 25.0 && vm.chartData <= 30.0){
        vm.diff5 = vm.chartData - vm.chartData10;
        vm.chartData11 = vm.chartData10 + vm.diff5;
        $rootScope.data = [
-         [vm.chartData2, vm.chartData4, vm.chartData6, vm.chartData8, vm.chartData10, vm.chartData11]
+         [vm.chartData0, vm.chartData2, vm.chartData4, vm.chartData6, vm.chartData8, vm.chartData10, vm.chartData11]
        ];
      }
 
-     $rootScope.labels = ["0km - 5km", "5km - 10km", "10km - 15km", "15km - 20km", "20km - 25km", "25km - 30km"];
+     $rootScope.labels = ["0km", "0.1km-5.0km", "5.0km-10.0km", "10.0km-15.0km", "15.0km-20.0km", "20.0km-25.0km", "25.0km-30.0km"];
      $rootScope.series = ['Average Speed'];
    };
 
