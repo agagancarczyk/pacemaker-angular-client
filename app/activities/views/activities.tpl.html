@@ -40,7 +40,31 @@
     </div>
   </div>
   <div class="col-md-6" ng-if="typeSelectedActivity == null">
-    <h3><strong>SELECT ACTIVITY</strong></h3><br>
+    <div class="well">
+      <h4><strong>LAST ACTIVITY: {{activities.mostRecentActivity.type}}</strong></h4><br>
+      <table class="table table-responsive">
+        <tbody>
+          <tr>
+            <td><strong>DISTANCE</strong></td>
+            <td><strong>DURATION</strong></td>
+            <td><strong>AVERAGE SPEED</strong></td>
+            <td><strong>CALORIES BURNED</strong></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-road"></i><strong> {{((activities.mostRecentActivity.total_distance)/1000).toFixed(2)}} km</strong></td>
+            <td><i class="fa fa-clock-o"></i><strong> {{activities.mostRecentActivity.duration/60}} min</strong></td>
+            <td><i class="fa fa-tachometer"></i><strong> {{(((((activities.mostRecentActivity.total_distance)/1000).toFixed(2))/(activities.mostRecentActivity.duration/60))*60).toFixed(2)}} km/hr</strong></td>
+            <td><i class="fa fa-fire"></i><strong> {{activities.mostRecentActivity.total_calories}} cal</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-12">
+      <canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-legend="true" chart-series="series"
+        chart-click="onClick">
+      </canvas>
+    </div>
   </div>
   <div class="col-md-6" ng-if="typeSelectedActivity != null">
     <div class="well">
@@ -62,11 +86,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-md-3">
-      <h5><strong>AVERAGE SPEED</strong></h5>
-      <h3><i class="fa fa-tachometer"></i><strong> {{(((((typeSelectedActivity.total_distance)/1000).toFixed(2))/(typeSelectedActivity.duration/60))*60).toFixed(2)}}</strong></h3>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <canvas id="line" class="chart chart-line" chart-data="data"
         chart-labels="labels" chart-legend="true" chart-series="series"
         chart-click="onClick">
